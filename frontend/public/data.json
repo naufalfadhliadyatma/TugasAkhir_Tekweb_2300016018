@@ -1,0 +1,17 @@
+[
+    {
+      "id": 1,
+      "name": "Wedang Uwuh",
+      "price": 15000,
+      "description": "Minuman tradisional khas Imogiri.",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 2,
+      "name": "Rempeyek",
+      "price": 10000,
+      "description": "Camilan tradisional renyah.",
+      "image": "https://via.placeholder.com/150"
+    }
+  ]
+  
