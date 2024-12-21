@@ -27,14 +27,14 @@ const ManageProduct = ({ onAddProduct }) => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className="flex justify-center items-center mt-24">
       <form
         onSubmit={handleSubmit}
-        className="bg-white p-6 rounded shadow-md w-[500px]"
+        className="bg-slate-50 p-6 rounded shadow-md w-[500px]"
       >
-        <h2 className="text-xl font-bold mb-4 text-center">Tambah Produk UMKM</h2>
+        <h2 className="text-xl font-bold mb-4 text-center font-poppins">Tambah Produk UMKM</h2>
         <div className="mb-4">
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+          <label htmlFor="name" className="block text-sm font-medium text-gray-700 font-poppins">
             Nama UMKM
           </label>
           <input
@@ -48,7 +48,7 @@ const ManageProduct = ({ onAddProduct }) => {
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="price" className="block text-sm font-medium text-gray-700">
+          <label htmlFor="price" className="block text-sm font-medium text-gray-700 font-poppins">
             Harga UMKM
           </label>
           <input
@@ -62,7 +62,7 @@ const ManageProduct = ({ onAddProduct }) => {
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="description" className="block text-sm font-medium text-gray-700">
+          <label htmlFor="description" className="block text-sm font-medium text-gray-700 font-poppins">
             Deskripsi UMKM
           </label>
           <textarea
@@ -77,7 +77,7 @@ const ManageProduct = ({ onAddProduct }) => {
         </div>
         <button
           type="submit"
-          className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 w-full"
+          className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 w-full font-poppins"
         >
           Tambah Produk
         </button>

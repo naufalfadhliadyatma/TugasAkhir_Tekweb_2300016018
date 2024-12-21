@@ -17,7 +17,7 @@ const Umkm = ({ products }) => {
                 className="w-[150px] h-[150px] object-cover rounded"
               />
             </div>
-            <h3 className="text-lg font-bold text-center">{product.name}</h3>
+            <h3 className="text-lg font-semibold text-center font-poppins">{product.name}</h3>
             <p className="text-center text-blue-600 text-lg">
               Rp {product.price.toLocaleString("id-ID")}
             </p>
