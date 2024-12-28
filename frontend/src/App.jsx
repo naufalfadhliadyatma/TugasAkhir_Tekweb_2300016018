@@ -1,23 +1,11 @@
-// import React from "react";
-import { useState } from "react"; // Import useState untuk state management
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import ProductDetail from "./pages/ProductDetail";
 import ManageProduct from "./pages/ManageProduct";
-import UmkmPage from "./pages/UmkmPage"; // Pastikan ini mengarah ke file UmkmPage yang benar
+import UmkmPage from "./pages/UmkmPage";
 
 const App = () => {
-  const [products, setProducts] = useState([]); // State untuk menyimpan data produk
-
-  // Fungsi untuk menambahkan produk baru ke dalam state
-  const handleAddProduct = (newProduct) => {
-    setProducts((prevProducts) => [
-      ...prevProducts,
-      { ...newProduct, id: prevProducts.length + 1 }, // Menambahkan ID unik ke setiap produk
-    ]);
-  };
-
   return (
     <Router>
       <Navbar />
@@ -27,11 +15,11 @@ const App = () => {
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route
             path="/manage"
-            element={<ManageProduct onAddProduct={handleAddProduct} />} // Mengoper fungsi handleAddProduct ke ManageProduct
+            element={<ManageProduct />} // Tidak perlu prop tambahan
           />
           <Route
             path="/umkm"
-            element={<UmkmPage products={products} />} // Mengoper data produk ke UmkmPage
+            element={<UmkmPage />} // Jika tidak menggunakan `products`, tidak perlu mengirim state
           />
         </Routes>
       </div>

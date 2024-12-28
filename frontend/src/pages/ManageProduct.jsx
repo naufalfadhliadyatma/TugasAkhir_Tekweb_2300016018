@@ -1,7 +1,6 @@
-import PropTypes from "prop-types";
 import { useState } from "react";
 
-const ManageProduct = ({ onProductAdded }) => {
+const ManageProduct = () => {
   const [formData, setFormData] = useState({
     judul: "",
     harga_barang: "",
@@ -44,11 +43,14 @@ const ManageProduct = ({ onProductAdded }) => {
 
       const savedProduct = await response.json();
       console.log("Produk berhasil disimpan:", savedProduct);
-      onProductAdded(savedProduct);
-      setFormData({ judul: "", harga_barang: "", deskripsi: "" }); // Reset form
+
+      // Reset form after successful submission
+      setFormData({ judul: "", harga_barang: "", deskripsi: "" });
       setProductImage(null);
+      alert("Produk berhasil ditambahkan!");
     } catch (error) {
       console.error("Error saving product:", error);
+      alert("Gagal menambahkan produk. Silakan coba lagi.");
     }
   };
 
@@ -137,10 +139,6 @@ const ManageProduct = ({ onProductAdded }) => {
       </form>
     </div>
   );
-};
-
-ManageProduct.propTypes = {
-  onProductAdded: PropTypes.func.isRequired,
 };
 
 export default ManageProduct;
