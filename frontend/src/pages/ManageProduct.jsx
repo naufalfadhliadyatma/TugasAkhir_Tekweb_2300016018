@@ -1,13 +1,20 @@
 import { useState } from "react";
 
 const ManageProduct = () => {
+  // State untuk menyimpan data form input (judul, harga_barang, dan deskripsi)
   const [formData, setFormData] = useState({
     judul: "",
     harga_barang: "",
     deskripsi: "",
   });
+
+  // State untuk menyimpan file gambar produk yang dipilih
   const [productImage, setProductImage] = useState(null);
 
+  /**
+   * Mengupdate state formData berdasarkan input pengguna.
+   * @param {Event} e - Event perubahan input
+   */
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -16,27 +23,38 @@ const ManageProduct = () => {
     }));
   };
 
+  /**
+   * Mengupdate state productImage dengan file yang dipilih dari input file.
+   * @param {Event} e - Event perubahan file input
+   */
   const handleFileChange = (e) => {
     setProductImage(e.target.files[0]);
   };
 
+  /**
+   * Mengirim data produk baru ke backend melalui HTTP POST.
+   * @param {Event} e - Event submit form
+   */
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // Membuat FormData untuk mengirim data produk bersama gambar
     const formDataToSend = new FormData();
     formDataToSend.append("judul", formData.judul);
-    formDataToSend.append("harga_barang", parseFloat(formData.harga_barang));
+    formDataToSend.append("harga_barang", parseFloat(formData.harga_barang)); // Konversi harga ke tipe angka
     formDataToSend.append("deskripsi", formData.deskripsi);
     if (productImage) {
       formDataToSend.append("foto_barang", productImage);
     }
 
     try {
+      // Mengirim permintaan POST ke backend dengan FormData
       const response = await fetch("http://localhost:3000/items", {
         method: "POST",
         body: formDataToSend,
       });
 
+      // Validasi respon dari server
       if (!response.ok) {
         throw new Error("Failed to save product");
       }
@@ -44,7 +62,7 @@ const ManageProduct = () => {
       const savedProduct = await response.json();
       console.log("Produk berhasil disimpan:", savedProduct);
 
-      // Reset form after successful submission
+      // Reset form setelah berhasil submit
       setFormData({ judul: "", harga_barang: "", deskripsi: "" });
       setProductImage(null);
       alert("Produk berhasil ditambahkan!");
@@ -55,14 +73,17 @@ const ManageProduct = () => {
   };
 
   return (
-    <div className="flex justify-center items-center mt-24">
+    <div className="flex justify-center items-center mt-16">
+      {/* Form untuk menambahkan produk UMKM */}
       <form
         onSubmit={handleSubmit}
         className="bg-slate-50 p-6 rounded shadow-md w-[500px]"
       >
-        <h2 className="text-xl font-bold mb-4 text-center font-poppins">
+        <h2 className="text-xl font-bold mb-4 text-center font-poppins text-zinc-800">
           Tambah Produk UMKM
         </h2>
+
+        {/* Input untuk nama produk */}
         <div className="mb-4">
           <label
             htmlFor="judul"
@@ -80,6 +101,8 @@ const ManageProduct = () => {
             required
           />
         </div>
+
+        {/* Input untuk harga produk */}
         <div className="mb-4">
           <label
             htmlFor="harga_barang"
@@ -97,6 +120,8 @@ const ManageProduct = () => {
             required
           />
         </div>
+
+        {/* Input untuk deskripsi produk */}
         <div className="mb-4">
           <label
             htmlFor="deskripsi"
@@ -114,6 +139,8 @@ const ManageProduct = () => {
             required
           ></textarea>
         </div>
+
+        {/* Input untuk upload foto produk */}
         <div className="mb-4">
           <label
             htmlFor="foto_barang"
@@ -130,6 +157,8 @@ const ManageProduct = () => {
             className="mt-1 p-2 border rounded w-full"
           />
         </div>
+
+        {/* Tombol submit untuk menambah produk */}
         <button
           type="submit"
           className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 w-full font-poppins"

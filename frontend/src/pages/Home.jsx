@@ -160,10 +160,10 @@ const Home = () => {
           </div>
           {/* Kontak Info */}
           <div className="w-full lg:w-1/2 h-52 px-6 flex flex-col justify-center">
-            <h3 className="text-4xl font-bold mb-4">Kontak Kami</h3>
-            <p className="mb-2 font-poppins text-1xl"><i className="ri-map-pin-fill text-zinc-800 mr-2 text-2xl"></i>Mojohuro, Sriharjo, Imogiri, Bantul</p>
-            <p className="mb-2 font-poppins text-1xl"><i className="ri-phone-fill text-zinc-800 mr-2 text-2xl"></i>085643029566</p>
-            <p className="mb-4 font-poppins text-1xl"><i className="ri-mail-fill text-zinc-800 mr-2 text-2xl"></i>desa.sriharjo@bantulkab.go.id</p>
+            <h3 className="text-4xl font-bold mb-4 text-zinc-800">Kontak Kami</h3>
+            <p className="mb-2 font-poppins text-1xl text-zinc-800"><i className="ri-map-pin-fill text-zinc-800 mr-2 text-2xl"></i>Mojohuro, Sriharjo, Imogiri, Bantul</p>
+            <p className="mb-2 font-poppins text-1xl text-zinc-800"><i className="ri-phone-fill text-zinc-800 mr-2 text-2xl"></i>085643029566</p>
+            <p className="mb-4 font-poppins text-1xl text-zinc-800"><i className="ri-mail-fill text-zinc-800 mr-2 text-2xl"></i>desa.sriharjo@bantulkab.go.id</p>
             <a
               href="https://www.instagram.com/kalurahan_sriharjo?igsh=eTdmdTRzbXhpdGdy"
               target="_blank"
