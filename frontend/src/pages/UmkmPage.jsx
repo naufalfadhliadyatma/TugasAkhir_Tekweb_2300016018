@@ -35,7 +35,7 @@ const Umkm = () => {
 
   // Memulai mode edit dengan menyimpan data produk ke state editProduct
   const handleEdit = (product) => {
-    setEditProduct({ ...product });
+    setEditProduct({ ...product }); //clone product
   };
 
   // Mengelola perubahan input pada mode edit
@@ -80,9 +80,9 @@ const Umkm = () => {
   };
 
   return (
-    <div className="p-6">
+    <div className="bg-amber-400 min-h-screen pt-9">
       {/* Header halaman */}
-      <h1 className="text-3xl font-bold text-center mb-6 ">
+      <h1 className="text-3xl font-bold text-center mb-6 font-montserrat">
         Daftar UMKM Kalurahan Sriharjo
       </h1>
 
@@ -93,8 +93,7 @@ const Umkm = () => {
           editProduct && editProduct.id === product.id ? (
             <div
               key={product.id}
-              className="w-[300px] bg-slate-100 shadow-md rounded-xl p-4"
-            >
+              className="w-[300px] bg-slate-100 shadow-md rounded-xl p-4"            >
               <h3 className="text-lg font-semibold text-center font-poppins text-zinc-800 ">
                 Edit Produk
               </h3>
@@ -127,7 +126,7 @@ const Umkm = () => {
               {/* Tombol untuk menyimpan perubahan */}
               <button
                 onClick={handleSave}
-                className="bg-blue-500 text-white py-1 px-4 rounded hover:bg-blue-600 mt-2 font-poppins"
+                className="bg-amber-500 text-white py-1 px-4 rounded hover:bg-amber-600 mt-2 font-poppins"
               >
                 Save
               </button>
@@ -143,7 +142,7 @@ const Umkm = () => {
             // Tampilan biasa untuk daftar produk
             <div
               key={product.id}
-              className="w-[300px] bg-yellow-50 shadow-md rounded-xl p-4 transform  transition-transform"
+              className="w-[300px] bg-amber-100 shadow-md rounded-xl p-4 transform  transition-transform"
             >
               {/* hover:scale-105 --> kode class diatas bagian card jika ingin hover */}
               {/* Gambar produk */}

@@ -9,11 +9,15 @@ import Card2 from "../assets/card2.png";
 import Card3 from "../assets/card3.png";
 
 const Home = () => {
+   // State untuk menyimpan data produk wisata
   const [products, setProducts] = useState([]);
+  // State untuk mengatur tampilan collapse/expand pada deskripsi
   const [collapsed, setCollapsed] = useState({});
+   // State untuk mengelola status modal
   const [modalOpen, setModalOpen] = useState(false);
-
+// Efek untuk memuat data produk wisata ketika komponen dirender
   useEffect(() => {
+    // Data dummy yang digunakan sebagai informasi wisata
     const sampleData = [
       {
         id: 1,
@@ -35,20 +39,21 @@ const Home = () => {
       },
     ];
     setProducts(sampleData);
+    // Inisialisasi state untuk collapse/expand setiap produk
     setCollapsed(sampleData.reduce((acc, item) => ({ ...acc, [item.id]: true }), {}));
   }, []);
-
+// Fungsi untuk toggle collapse/expand deskripsi produk
   const toggleCollapse = (id) => {
     setCollapsed((prev) => ({ ...prev, [id]: !prev[id] }));
   };
-
+  // Fungsi untuk toggle status modal
   const toggleModal = () => {
     setModalOpen((prev) => !prev);
   };
 
   return (
     <div>
-      {/* Hero Section */}
+      {/* Hero Section: Menampilkan background gambar dan tombol modal */}
       <div
         className="relative"
         style={{ backgroundImage: `url(${BackgroundImage})`, backgroundSize: "cover", backgroundPosition: "center" }}
@@ -62,14 +67,14 @@ const Home = () => {
             Learn More
           </button>
         </div>
-        <div className="h-8 bg-gradient-to-t from-white to-transparent"></div>
+        {/* <div className="h-8 bg-gradient-to-t from-white to-transparent"></div> */}
       </div>
-
+       {/* Modal untuk informasi sejarah Kalurahan */}
       {modalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-amber-50 rounded-lg p-6 max-w-2xl">
             {/* Konten modal */}
-            <h2 className="text-2xl font-bold mb-4 text-amber-800">Sejarah Kalurahan Sriharjo</h2>
+            <h2 className="text-2xl font-bold mb-4 text-amber-800 text-center">Sejarah Kalurahan Sriharjo</h2>
             <p className="text-gray-700 text-sm mb-4 text-justify">
               Kalurahan Sriharjo dibentuk pada tahun 1946. Sedangkan nama ‘Sriharjo’ diambil dari geografi wilayah dan mata pencaharian penduduk.
               Menurut mitos Jawa, kata ‘Sriharjo’ adalah pemberian dari Dewi Sri dan ‘harjo’ yaitu raharjo atau sejahtera. Jadi, nama Sriharjo berarti desa
@@ -112,14 +117,14 @@ const Home = () => {
         </div>
       )}
 
-      {/* Cards Section */}
+      {/* Cards Section: Menampilkan informasi wisata di sriharjo */}
       <div className="p-6 py-20">
-        <h2 className="text-4xl font-bold text-center mb-8 p-20">Wisata Kalurahan Sriharjo</h2>
+        <h2 className="text-4xl font-bold text-center mb-8 p-20 bg-gradient-to-tr from-amber-400 to-amber-600 hover:bg-gradient-to-tr hover:from-amber-100 hover:to-amber-400 transition duration-[5000] ease-in-out rounded-xl font-montserrat">Wisata Kalurahan Sriharjo</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {products.map((product) => (
             <div
               key={product.id}
-              className="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-500"
+              className="bg-amber-50 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-500"
             >
               <img
                 src={product.image}
@@ -133,7 +138,7 @@ const Home = () => {
                 )}
                 <button
                   onClick={() => toggleCollapse(product.id)}
-                  className="mt-4 px-4 py-2 bg-green-900 text-white rounded-lg hover:bg-lime-600 focus:outline-none"
+                  className="mt-4 px-4 py-2 bg-amber-700 text-white rounded-lg hover:bg-amber-600 focus:outline-none"
                 >
                   {collapsed[product.id] ? "Show Description" : "Hide Description"}
                 </button>
@@ -143,11 +148,11 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Maps Section */}
-      <div className="bg-gradient-to-b from-gray-100 to-gray-300 py-40">
+      {/* Maps Section: Menampilkan lokasi Kalurahan */}
+      <div className="bg-gradient-to-b from-amber-100 to-amber-500 py-40 rounded-t-3xl">
         <div className="flex flex-wrap">
           {/* Maps Container */}
-          <div className="w-full lg:w-1/2 h-96 px-9 ">
+          <div className="w-full lg:w-1/2 h-96 px-9">
             <MapContainer center={[-7.9441037, 110.3730135]} zoom={15} style={{ height: "100%", width: "100%" }}>
               <TileLayer
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -160,7 +165,7 @@ const Home = () => {
           </div>
           {/* Kontak Info */}
           <div className="w-full lg:w-1/2 h-52 px-6 flex flex-col justify-center">
-            <h3 className="text-4xl font-bold mb-4 text-zinc-800">Kontak Kami</h3>
+            <h3 className="text-4xl font-bold mb-4 text-zinc-800 font-montserrat">Kontak Kami</h3>
             <p className="mb-2 font-poppins text-1xl text-zinc-800"><i className="ri-map-pin-fill text-zinc-800 mr-2 text-2xl"></i>Mojohuro, Sriharjo, Imogiri, Bantul</p>
             <p className="mb-2 font-poppins text-1xl text-zinc-800"><i className="ri-phone-fill text-zinc-800 mr-2 text-2xl"></i>085643029566</p>
             <p className="mb-4 font-poppins text-1xl text-zinc-800"><i className="ri-mail-fill text-zinc-800 mr-2 text-2xl"></i>desa.sriharjo@bantulkab.go.id</p>
@@ -168,14 +173,14 @@ const Home = () => {
               href="https://www.instagram.com/kalurahan_sriharjo?igsh=eTdmdTRzbXhpdGdy"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-500 text-1xl font-poppins flex items-center"
+              className="text-zinc-800 text-1xl font-poppins flex items-center"
             >
               <i className="ri-instagram-fill text-zinc-800 mr-2 text-2xl"></i>kalurahan_sriharjo
             </a>
           </div>
         </div>
       </div>
-      <footer className="bg-black text-white text-center py-6">
+      <footer className="bg-amber-900 text-white text-center py-6">
         © 2024 Copyright: LokalMart
       </footer>
     </div>

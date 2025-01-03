@@ -73,13 +73,13 @@ const ManageProduct = () => {
   };
 
   return (
-    <div className="flex justify-center items-center mt-16">
+    <div className="bg-gradient-to-r from-amber-400 to-amber-200 min-h-screen flex justify-center items-center pb-14">
       {/* Form untuk menambahkan produk UMKM */}
       <form
         onSubmit={handleSubmit}
-        className="bg-slate-50 p-6 rounded shadow-md w-[500px]"
+        className="bg-amber-100 p-6 rounded-2xl shadow-md w-[500px]"
       >
-        <h2 className="text-xl font-bold mb-4 text-center font-poppins text-zinc-800">
+        <h2 className="text-xl font-bold mb-4 text-center font-poppins text-amber-800">
           Tambah Produk UMKM
         </h2>
 
@@ -97,7 +97,7 @@ const ManageProduct = () => {
             name="judul"
             value={formData.judul}
             onChange={handleChange}
-            className="mt-1 p-2 border rounded w-full"
+            className="mt-1 p-2 border rounded w-full bg-amber-50"
             required
           />
         </div>
@@ -116,7 +116,7 @@ const ManageProduct = () => {
             name="harga_barang"
             value={formData.harga_barang}
             onChange={handleChange}
-            className="mt-1 p-2 border rounded w-full"
+            className="mt-1 p-2 border rounded w-full bg-amber-50"
             required
           />
         </div>
@@ -134,7 +134,7 @@ const ManageProduct = () => {
             name="deskripsi"
             value={formData.deskripsi}
             onChange={handleChange}
-            className="mt-1 p-2 border rounded w-full"
+            className="mt-1 p-2 border rounded w-full bg-amber-50"
             rows="3"
             required
           ></textarea>
@@ -152,7 +152,7 @@ const ManageProduct = () => {
             type="file"
             id="foto_barang"
             name="foto_barang"
-            accept="image/*"
+            accept="image/*" //untuk menerima foto saja
             onChange={handleFileChange}
             className="mt-1 p-2 border rounded w-full"
           />
@@ -161,7 +161,7 @@ const ManageProduct = () => {
         {/* Tombol submit untuk menambah produk */}
         <button
           type="submit"
-          className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 w-full font-poppins"
+          className="bg-amber-600 text-white py-2 px-4 rounded hover:bg-amber-400 w-full font-poppins"
         >
           Tambah Produk
         </button>

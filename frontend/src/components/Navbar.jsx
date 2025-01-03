@@ -21,7 +21,7 @@ const Navbar = () => {
 
   // Struktur dan tampilan navbar
   return (
-    <nav className="bg-gray-700 text-white shadow-md">
+    <nav className="bg-gradient-to-br from-amber-500 to-amber-800 text-white shadow-md">
       <div className="container mx-auto flex justify-between items-center p-4">
         {/* Bagian logo dan deskripsi lokasi */}
         <div className="flex items-center space-x-3">
@@ -32,7 +32,7 @@ const Navbar = () => {
           />
           <div>
             {/* Judul aplikasi */}
-            <h1 className="text-xl font-bold text-amber-200">
+            <h1 className="text-xl font-bold text-yellow-200">
               LokalMart
             </h1>
             {/* Deskripsi lokasi */}
@@ -72,28 +72,28 @@ const Navbar = () => {
             {/* Tautan ke halaman utama */}
             <Link
               to="/" // Rute ke halaman Home
-              className="block md:inline-block px-4 py-2 text-white hover:text-cyan-100 font-poppins font-thin"
+              className="block md:inline-block px-4 py-2 text-white hover:text-yellow-400 font-poppins font-thin"
             >
               Home
             </Link>
             {/* Tautan ke halaman Form Products */}
             <Link
               to="/manage" // Rute ke halaman Form Products
-              className="block md:inline-block px-4 py-2 text-white hover:text-cyan-100 font-poppins font-thin"
+              className="block md:inline-block px-4 py-2 text-white hover:text-yellow-400  font-poppins font-thin"
             >
               Form Products
             </Link>
             {/* Tautan ke halaman UMKM */}
             <Link
               to="/umkm" // Rute ke halaman UMKM
-              className="block md:inline-block px-4 py-2 text-white hover:text-cyan-100 font-poppins font-thin"
+              className="block md:inline-block px-4 py-2 text-white hover:text-yellow-400  font-poppins font-thin"
             >
               Umkm
             </Link>
             {/* Tombol untuk mengganti tema aplikasi (Dark Mode / Light Mode) */}
             <button
               onClick={toggleDarkMode} // Fungsi untuk mengganti tema
-              className="block md:inline-block px-4 py-2 text-white hover:text-cyan-100 font-poppins font-thin"
+              className="block md:inline-block px-4 py-2 text-white hover:text-yellow-400  font-poppins font-thin"
               aria-label="Toggle Dark Mode" // Deskripsi untuk aksesibilitas
             >
               {/* Menampilkan ikon matahari untuk Light Mode dan ikon bulan untuk Dark Mode */}
