@@ -109,7 +109,7 @@ const Home = () => {
             </ul>
             <button
               onClick={toggleModal}
-              className="mt-4 px-4 py-2 bg-green-900 text-white rounded-lg hover:bg-green-700 focus:outline-none"
+              className="mt-4 px-4 py-2 bg-amber-800 text-white rounded-lg hover:bg-amber-700 focus:outline-none"
             >
               Close
             </button>
@@ -164,8 +164,8 @@ const Home = () => {
             </MapContainer>
           </div>
           {/* Kontak Info */}
-          <div className="w-full lg:w-1/2 h-52 px-6 flex flex-col justify-center">
-            <h3 className="text-4xl font-bold mb-4 text-zinc-800 font-montserrat">Kontak Kami</h3>
+          <div className="w-full lg:w-1/2 h-60 px-6 flex flex-col justify-center">
+            <h3 className="text-4xl font-bold mb-4 text-amber-800 font-montserrat">Kontak Kami</h3>
             <p className="mb-2 font-poppins text-1xl text-zinc-800"><i className="ri-map-pin-fill text-zinc-800 mr-2 text-2xl"></i>Mojohuro, Sriharjo, Imogiri, Bantul</p>
             <p className="mb-2 font-poppins text-1xl text-zinc-800"><i className="ri-phone-fill text-zinc-800 mr-2 text-2xl"></i>085643029566</p>
             <p className="mb-4 font-poppins text-1xl text-zinc-800"><i className="ri-mail-fill text-zinc-800 mr-2 text-2xl"></i>desa.sriharjo@bantulkab.go.id</p>
