@@ -80,7 +80,7 @@ const Umkm = () => {
   };
 
   return (
-    <div className="bg-amber-400 min-h-screen pt-9">
+    <div className="bg-amber-100 min-h-screen pt-9">
       {/* Header halaman */}
       <h1 className="text-3xl font-bold text-center mb-6 font-montserrat">
         Daftar UMKM Kalurahan Sriharjo
@@ -142,7 +142,7 @@ const Umkm = () => {
             // Tampilan biasa untuk daftar produk
             <div
               key={product.id}
-              className="w-[300px] bg-amber-100 shadow-md rounded-xl p-4 transform  transition-transform"
+              className="w-[300px] bg-gradient-to-b from-zinc-100 to-amber-100 shadow-md rounded-xl p-4 transform  transition-transform"
             >
               {/* hover:scale-105 --> kode class diatas bagian card jika ingin hover */}
               {/* Gambar produk */}

@@ -73,7 +73,7 @@ const ManageProduct = () => {
   };
 
   return (
-    <div className="bg-gradient-to-r from-amber-400 to-amber-200 min-h-screen flex justify-center items-center pb-14">
+    <div className="bg-gradient-to-t from-zinc-100 to-amber-200 min-h-screen flex justify-center items-center pb-14">
       {/* Form untuk menambahkan produk UMKM */}
       <form
         onSubmit={handleSubmit}

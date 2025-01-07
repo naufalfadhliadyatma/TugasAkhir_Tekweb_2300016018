@@ -119,7 +119,7 @@ const Home = () => {
 
       {/* Cards Section: Menampilkan informasi wisata di sriharjo */}
       <div className="p-6 py-20">
-        <h2 className="text-4xl font-bold text-center mb-8 p-20 bg-gradient-to-tr from-amber-200 to-amber-600 hover:bg-gradient-to-tr hover:from-amber-100 hover:to-amber-400 transition duration-[5000] ease-in-out rounded-xl font-montserrat">Wisata Kalurahan Sriharjo</h2>
+        <h2 className="text-4xl font-bold text-center mb-8 p-20 bg-gradient-to-tr from-amber-100 to-amber-50 rounded-xl font-montserrat text-amber-800">Wisata Kalurahan Sriharjo</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {products.map((product) => (
             <div
