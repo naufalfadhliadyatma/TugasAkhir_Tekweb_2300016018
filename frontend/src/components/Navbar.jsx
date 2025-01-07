@@ -59,7 +59,7 @@ const Navbar = () => {
   return (
     <nav
       className={`sticky top-0 text-white shadow-md z-50 transition-all duration-300 ${
-        isScrolled ? "bg-opacity-30 backdrop-blur bg-amber-800" : "bg-amber-800"
+        isScrolled ? "bg-opacity-30 backdrop-blur bg-amber-800" : "bg-gradient-to-tr from-amber-500 to-amber-800"
       }`}
     >
       <div className="container mx-auto flex justify-between items-center p-4">
@@ -117,21 +117,21 @@ const Navbar = () => {
             {/* Tautan navigasi */}
             <Link
               to="/"
-              className="block px-4 py-2 text-white hover:text-yellow-400 font-poppins font-thin"
+              className="relative block px-4 py-2 text-white hover:text-amber-200 font-poppins font-thin after:absolute after:bottom-0 after:left-1/2 after:w-[50%] after:translate-x-[-50%] after:h-[0.1rem] after:bg-amber-300 after:scale-x-0 hover:after:scale-x-100 after:origin-center after:transition-transform after:duration-200"
               onClick={() => setIsOpen(false)}
             >
               Home
             </Link>
             <Link
               to="/manage"
-              className="block px-4 py-2 text-white hover:text-yellow-400 font-poppins font-thin"
+              className="relative block px-4 py-2 text-white hover:text-amber-200 font-poppins font-thin after:absolute after:bottom-0 after:left-1/2 after:w-[50%] after:translate-x-[-50%] after:h-[0.1rem] after:bg-amber-300 after:scale-x-0 hover:after:scale-x-100 after:origin-center after:transition-transform after:duration-200"
               onClick={() => setIsOpen(false)}
             >
               Form Products
             </Link>
             <Link
               to="/umkm"
-              className="block px-4 py-2 text-white hover:text-yellow-400 font-poppins font-thin"
+              className="relative block px-4 py-2 text-white hover:text-amber-200 font-poppins font-thin after:absolute after:bottom-0 after:left-1/2 after:w-[50%] after:translate-x-[-50%] after:h-[0.1rem] after:bg-amber-300 after:scale-x-0 hover:after:scale-x-100 after:origin-center after:transition-transform after:duration-200"
               onClick={() => setIsOpen(false)}
             >
               UMKM
@@ -154,19 +154,19 @@ const Navbar = () => {
         <div className="hidden md:flex md:items-center space-x-4">
           <Link
             to="/"
-            className="px-4 py-2 text-white hover:text-yellow-400 font-poppins font-thin"
+            className="relative block px-4 py-2 text-white hover:text-amber-200 font-poppins font-thin after:absolute after:bottom-0 after:left-1/2 after:w-[50%] after:translate-x-[-50%] after:h-[0.1rem] after:bg-amber-300 after:scale-x-0 hover:after:scale-x-100 after:origin-center after:transition-transform after:duration-200"
           >
             Home
           </Link>
           <Link
             to="/manage"
-            className="px-4 py-2 text-white hover:text-yellow-400 font-poppins font-thin"
+            className="relative block px-4 py-2 text-white hover:text-amber-200 font-poppins font-thin after:absolute after:bottom-0 after:left-1/2 after:w-[50%] after:translate-x-[-50%] after:h-[0.1rem] after:bg-amber-300 after:scale-x-0 hover:after:scale-x-100 after:origin-center after:transition-transform after:duration-200"
           >
             Form Products
           </Link>
           <Link
             to="/umkm"
-            className="px-4 py-2 text-white hover:text-yellow-400 font-poppins font-thin"
+            className="relative block px-4 py-2 text-white hover:text-amber-200 font-poppins font-thin after:absolute after:bottom-0 after:left-1/2 after:w-[50%] after:translate-x-[-50%] after:h-[0.1rem] after:bg-amber-300 after:scale-x-0 hover:after:scale-x-100 after:origin-center after:transition-transform after:duration-200"
           >
             UMKM
           </Link>

@@ -72,7 +72,7 @@ const Home = () => {
        {/* Modal untuk informasi sejarah Kalurahan */}
       {modalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-amber-50 rounded-lg p-6 max-w-2xl">
+          <div className="bg-amber-50 rounded-lg p-6 max-w-2xl bg-opacity-80">
             {/* Konten modal */}
             <h2 className="text-2xl font-bold mb-4 text-amber-800 text-center">Sejarah Kalurahan Sriharjo</h2>
             <p className="text-gray-700 text-sm mb-4 text-justify">
@@ -119,7 +119,7 @@ const Home = () => {
 
       {/* Cards Section: Menampilkan informasi wisata di sriharjo */}
       <div className="p-6 py-20">
-        <h2 className="text-4xl font-bold text-center mb-8 p-20 bg-gradient-to-tr from-amber-400 to-amber-600 hover:bg-gradient-to-tr hover:from-amber-100 hover:to-amber-400 transition duration-[5000] ease-in-out rounded-xl font-montserrat">Wisata Kalurahan Sriharjo</h2>
+        <h2 className="text-4xl font-bold text-center mb-8 p-20 bg-gradient-to-tr from-amber-200 to-amber-600 hover:bg-gradient-to-tr hover:from-amber-100 hover:to-amber-400 transition duration-[5000] ease-in-out rounded-xl font-montserrat">Wisata Kalurahan Sriharjo</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {products.map((product) => (
             <div
